@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>M-Market</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stomp-websocket@2.3.4-next/lib/stomp.min.js"></script>
+    <script src="/app.js"></script>
+    <style>
+        table {
+            margin: 10px 0;
+        }
+        table tr td {
+            min-width: 400px;
+            border-bottom: 1px solid #eee;
+        }
+        table tr td.me {
+            text-align: right;
+        }
+        table tr td span {
+            margin: 10px;
+            color: #66f;
+        }
+
+        input#content {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <form>
+                <input type="hidden" id="senderId"/>
+                <input type="text" id="senderName" placeholder="닉네임"/>
+                <button id="connect" type="submit">접속</button>
+                <button id="disconnect" type="submit" disabled="disabled">해제</button>
+            </form>
+        </div>
+        <div>
+            <table id="conversation">
+                <tbody></tbody>
+            </table>
+        </div>
+        <div>
+            <div>
+                <form>
+                    <input type="text" id="content" placeholder=""/>
+                    <button id="send" type="submit">전송</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
